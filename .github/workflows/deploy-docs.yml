@@ -28,17 +28,17 @@ jobs:
         
       - name: Setup Node.js
         uses: actions/setup-node@v4
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4          
+        with:
+          cache: 'npm'
       - name: Install dependencies
         run: |
           cd docs
-          pnpm install
+          npm ci
           
       - name: Build documentation
         run: |
           cd docs
-          pnpm run build
+          npm run build
           
       - name: Setup Pages
         uses: actions/configure-pages@v5

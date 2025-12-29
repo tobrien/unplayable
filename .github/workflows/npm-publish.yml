@@ -75,7 +75,7 @@ jobs:
       - run: npm run test
       - uses: codecov/codecov-action@v5
         with:
-          slug: SemicolonAmbulance/unplayable
+          slug: tobrien/unplayable
           token: ${{ secrets.CODECOV_TOKEN }}
 
   publish-npm:
