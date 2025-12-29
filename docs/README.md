@@ -8,30 +8,30 @@ This directory contains the documentation website for the Unplayable library, bu
 
 ```bash
 # Install dependencies
-pnpm install
+npm install
 
 # Start development server
-pnpm run dev
+npm run dev
 # Opens at http://localhost:3002
 
 # Build for production
-pnpm run build
+npm run build
 
 # Preview production build
-pnpm run preview
+npm run preview
 ```
 
 ### Testing
 
 ```bash
 # Run tests
-pnpm test
+npm test
 
 # Run tests with coverage
-pnpm test --coverage
+npm test --coverage
 
 # Run tests in watch mode
-pnpm test --watch
+npm test --watch
 ```
 
 ## 📁 Structure
@@ -122,7 +122,7 @@ The site automatically deploys to GitHub Pages when changes are pushed to the ma
 
 ```bash
 # Build the site
-pnpm run build
+npm run build
 
 # The built files will be in the dist/ directory
 # Deploy the contents of dist/ to your hosting provider
@@ -131,8 +131,8 @@ pnpm run build
 ### Local Preview of Production Build
 
 ```bash
-pnpm run build
-pnpm run preview
+npm run build
+npm run preview
 ```
 
 ## 🛠 Development
@@ -209,7 +209,7 @@ const result = await unplayable.processAudio({
 ```bash
 # Clear cache and reinstall
 rm -rf node_modules package-lock.json
-pnpm install
+npm install
 ```
 
 **Development Server Won't Start:**

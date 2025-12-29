@@ -16,9 +16,9 @@ A cross-platform audio recording and processing library, designed to be easily i
 ```bash
 npm install @theunwalked/unplayable
 # or
-pnpm add @theunwalked/unplayable
-# or
 yarn add @theunwalked/unplayable
+# or
+pnpm add @theunwalked/unplayable
 ```
 
 ### System Requirements
@@ -370,23 +370,23 @@ try {
 ```bash
 git clone https://github.com/SemicolonAmbulance/unplayable.git
 cd unplayable
-pnpm install
-pnpm run build
+npm install
+npm run build
 ```
 
 ### Running Tests
 
 ```bash
-pnpm test                 # Run all tests
-pnpm test --coverage      # Run tests with coverage
-pnpm test --watch         # Run tests in watch mode
+npm test                 # Run all tests
+npm test --coverage      # Run tests with coverage
+npm test --watch         # Run tests in watch mode
 ```
 
 ### Linting and Formatting
 
 ```bash
-pnpm run lint            # Check for linting errors
-pnpm run lint:fix        # Fix linting errors
+npm run lint            # Check for linting errors
+npm run lint:fix        # Fix linting errors
 ```
 
 ## Contributing
@@ -394,7 +394,7 @@ pnpm run lint:fix        # Fix linting errors
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Make your changes and add tests
-4. Ensure tests pass (`pnpm test`)
+4. Ensure tests pass (`npm test`)
 5. Commit your changes (`git commit -m 'Add amazing feature'`)
 6. Push to the branch (`git push origin feature/amazing-feature`)
 7. Open a Pull Request
