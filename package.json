@@ -53,7 +53,7 @@
   "author": "Tim O'Brien <tobrien@discursive.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "@theunwalked/cardigantime": "file:../cardigantime",
+    "@theunwalked/cardigantime": "^0.0.17",
     "commander": "^14.0.2",
     "glob": "^13.0.0",
     "winston": "^3.17.0",
