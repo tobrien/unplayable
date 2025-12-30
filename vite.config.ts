@@ -34,6 +34,7 @@ export default defineConfig({
                 'stream',
                 'events',
                 'util',
+                'url',
                 'process',
                 'readline',
                 'winston',
