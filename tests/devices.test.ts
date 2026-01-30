@@ -2175,7 +2175,7 @@ AVFoundation audio devices:
             await devicesModule.parseAudioDevices();
 
             expect(run).toHaveBeenCalledWith(
-                '/opt/homebrew/bin/ffmpeg',
+                'ffmpeg', // Falls back to PATH resolution when FFMPEG_PATH not set
                 expect.any(Array),
                 expect.any(Object)
             );
@@ -2208,7 +2208,7 @@ AVFoundation audio devices:
             await devicesModule.parseAudioDevices();
 
             expect(run).toHaveBeenCalledWith(
-                '/opt/homebrew/bin/ffmpeg', // Should use default when empty
+                'ffmpeg', // Falls back to PATH resolution when empty
                 expect.any(Array),
                 expect.any(Object)
             );

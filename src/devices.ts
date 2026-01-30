@@ -8,9 +8,10 @@ import { run } from './util/child';
 
 /**
  * Get ffmpeg command path from environment or default
+ * Falls back to 'ffmpeg' which relies on PATH resolution
  */
 const getFFmpegPath = (): string => {
-    return process.env.FFMPEG_PATH || '/opt/homebrew/bin/ffmpeg';
+    return process.env.FFMPEG_PATH || 'ffmpeg';
 };
 
 /**
