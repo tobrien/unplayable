@@ -1,5 +1,5 @@
-import { spawn } from 'child_process';
-import { EventEmitter } from 'events';
+import { spawn } from 'node:child_process';
+import { EventEmitter } from 'node:events';
 
 import { describe, test, expect, vi, beforeEach, afterEach } from 'vitest';
 

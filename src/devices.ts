@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import * as fs from 'fs/promises';
-import * as path from 'path';
+import * as fs from 'node:fs/promises';
+import * as path from 'node:path';
 
 import { AudioDevice, AudioDeviceConfig, Logger } from './types';
 import { AudioDeviceError } from './error';
@@ -8,9 +8,10 @@ import { run } from './util/child';
 
 /**
  * Get ffmpeg command path from environment or default
+ * Falls back to 'ffmpeg' which relies on PATH resolution
  */
 const getFFmpegPath = (): string => {
-    return process.env.FFMPEG_PATH || '/opt/homebrew/bin/ffmpeg';
+    return process.env.FFMPEG_PATH || 'ffmpeg';
 };
 
 /**

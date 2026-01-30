@@ -60,7 +60,7 @@ const unplayable = await createUnplayable({
 Process audio with minimal setup:
 
 ```typescript
-import { processAudio } from '@theunwalked/unplayable';
+import { processAudio } from '@utilarium/unplayable';
 
 const result = await processAudio({
   maxRecordingTime: 60,
@@ -76,7 +76,7 @@ const result = await processAudio({
 Record audio and return file path:
 
 ```typescript
-import { recordAudio } from '@theunwalked/unplayable';
+import { recordAudio } from '@utilarium/unplayable';
 
 const audioPath = await recordAudio({
   maxRecordingTime: 30
@@ -91,7 +91,7 @@ const audioPath = await recordAudio({
 List available audio devices:
 
 ```typescript
-import { getAudioDevices } from '@theunwalked/unplayable';
+import { getAudioDevices } from '@utilarium/unplayable';
 
 const devices = await getAudioDevices();
 ```
@@ -191,7 +191,7 @@ import {
   AudioRecordingError, 
   AudioDeviceError,
   AudioConfigurationError 
-} from '@theunwalked/unplayable';
+} from '@utilarium/unplayable';
 
 try {
   await unplayable.processAudio(options);

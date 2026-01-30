@@ -25,46 +25,17 @@ export default defineConfig({
         },
         rollupOptions: {
             external: [
-                'fs',
-                'fs/promises',
-                'path',
-                'os',
-                'crypto',
-                'child_process',
-                'stream',
-                'events',
-                'util',
-                'url',
-                'process',
-                'readline',
+                // Node built-ins
+                /^node:/,
+                // Dependencies
                 'winston',
                 'glob',
                 'zod',
                 'commander',
-                '@theunwalked/cardigantime'
+                '@utilarium/cardigantime'
             ],
-            output: {
-                globals: {
-                    'fs': 'fs',
-                    'fs/promises': 'fs',
-                    'path': 'path',
-                    'os': 'os',
-                    'crypto': 'crypto',
-                    'child_process': 'child_process',
-                    'stream': 'stream',
-                    'events': 'events',
-                    'util': 'util',
-                    'process': 'process',
-                    'readline': 'readline',
-                    'winston': 'winston',
-                    'glob': 'glob',
-                    'zod': 'zod',
-                    'commander': 'commander',
-                    '@theunwalked/cardigantime': '@theunwalked/cardigantime'
-                },
-            },
         },
-        target: 'node18',
+        target: 'esnext',
         minify: false,
         sourcemap: true,
     },

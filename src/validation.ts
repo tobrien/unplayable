@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import * as fs from 'fs/promises';
-import * as path from 'path';
+import * as fs from 'node:fs/promises';
+import * as path from 'node:path';
 
 import { SUPPORTED_AUDIO_FORMATS, Logger } from './types';
 import { AudioProcessingError } from './error';

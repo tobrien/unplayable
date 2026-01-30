@@ -25,7 +25,7 @@ mocks.create.mockReturnValue({
 });
 
 // Mock modules
-vi.mock('@theunwalked/cardigantime', () => ({
+vi.mock('@utilarium/cardigantime', () => ({
     create: (...args: any[]) => mocks.create(...args)
 }));
 

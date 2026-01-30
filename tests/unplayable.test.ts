@@ -295,7 +295,7 @@ vi.mock('../src/configuration', () => ({
                 metadata: undefined
             });
 
-            await expect(unplayable.recordAudio()).rejects.toThrow('Recording was cancelled or failed');
+            await expect(unplayable.recordAudio()).rejects.toThrow('Recording was cancelled');
         });
 
         it('should throw error when no audio file path is returned', async () => {
@@ -308,7 +308,7 @@ vi.mock('../src/configuration', () => ({
                 metadata: undefined
             });
 
-            await expect(unplayable.recordAudio()).rejects.toThrow('Recording was cancelled or failed');
+            await expect(unplayable.recordAudio()).rejects.toThrow('Recording completed but no audio file was produced');
         });
     });
 

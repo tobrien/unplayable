@@ -18,7 +18,7 @@ Default recording format depends on the platform:
 Check if an audio file is supported:
 
 ```typescript
-import { createUnplayable } from '@theunwalked/unplayable';
+import { createUnplayable } from '@utilarium/unplayable';
 
 const unplayable = await createUnplayable();
 
@@ -42,7 +42,7 @@ Unplayable provides comprehensive audio device detection and management capabili
 ### Listing Available Devices
 
 ```typescript
-import { getAudioDevices } from '@theunwalked/unplayable';
+import { getAudioDevices } from '@utilarium/unplayable';
 
 // Get all available input devices
 const devices = await getAudioDevices();
@@ -60,7 +60,7 @@ devices.forEach(device => {
 ### Device Detection and Selection
 
 ```typescript
-import { createUnplayable } from '@theunwalked/unplayable';
+import { createUnplayable } from '@utilarium/unplayable';
 
 const unplayable = await createUnplayable();
 

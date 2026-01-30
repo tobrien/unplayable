@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-import * as os from 'os';
-import * as path from 'path';
-import { fileURLToPath } from 'url';
+import * as os from 'node:os';
+import * as path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-import { create } from '@theunwalked/cardigantime';
+import { create } from '@utilarium/cardigantime';
 import { Command } from 'commander';
 
 import { createConfiguration } from './configuration';

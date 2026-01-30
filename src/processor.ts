@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import * as path from 'path';
-import * as os from 'os';
-import { spawn } from 'child_process';
+import * as path from 'node:path';
+import * as os from 'node:os';
+import { spawn } from 'node:child_process';
 
 import {
     AudioProcessingOptions,
@@ -367,12 +367,14 @@ export class AudioProcessor {
 
                 this.logger?.debug(`FFmpeg process exited with code ${code}, signal ${signal}`);
 
-                if (code !== 0) {
-                    this.logger?.error(`FFmpeg exited with code ${code}: ${stderr}`);
-                    reject(new AudioRecordingError(`FFmpeg exited with code ${code}: ${stderr}`));
-                } else {
+                // A process killed by signal (e.g., SIGTERM from maxTime timeout) has code=null
+                // This is expected behavior when recording is stopped, not an error
+                if (code === 0 || signal === 'SIGTERM' || signal === 'SIGKILL') {
                     this.logger?.info(`✅ Recording completed successfully`);
                     resolve({ cancelled: false });
+                } else {
+                    this.logger?.error(`FFmpeg exited with code ${code}: ${stderr}`);
+                    reject(new AudioRecordingError(`FFmpeg exited with code ${code}: ${stderr}`));
                 }
             });
 
@@ -456,7 +458,9 @@ export class AudioProcessor {
             for (const file of files) {
                 await this.storage.deleteFile(file);
             }
-            // Note: We don't remove the directory itself as fs.rmdir might require additional logic
+            // Remove the directory itself after deleting all files
+            const fs = await import('node:fs/promises');
+            await fs.rmdir(tempDir);
             this.logger?.debug(`Cleaned up temporary directory: ${tempDir}`);
         } catch (error: any) {
             this.logger?.warn(`Failed to cleanup temporary directory ${tempDir}: ${error.message}`);
