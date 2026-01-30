@@ -59,8 +59,17 @@ export class Unplayable {
             ...options,
         });
 
-        if (result.cancelled || !result.audioFilePath) {
-            throw new Error('Recording was cancelled or failed');
+        if (result.cancelled) {
+            throw new Error('Recording was cancelled');
+        }
+
+        if (!result.audioFilePath) {
+            // Check if the issue is missing output directory
+            const outputDir = options.outputDirectory || this.config.get('outputDirectory');
+            if (!outputDir) {
+                throw new Error('Recording completed but no output directory was specified. Set outputDirectory in options or configuration.');
+            }
+            throw new Error('Recording completed but no audio file was produced');
         }
 
         return result.audioFilePath;
