@@ -14,11 +14,11 @@ A cross-platform audio recording and processing library, designed to be easily i
 ## Installation
 
 ```bash
-npm install @theunwalked/unplayable
+npm install @utilarium/unplayable
 # or
-yarn add @theunwalked/unplayable
+yarn add @utilarium/unplayable
 # or
-pnpm add @theunwalked/unplayable
+pnpm add @utilarium/unplayable
 ```
 
 ### System Requirements
@@ -51,7 +51,7 @@ choco install ffmpeg
 ### Basic Audio Recording
 
 ```typescript
-import { createUnplayable } from '@theunwalked/unplayable';
+import { createUnplayable } from '@utilarium/unplayable';
 
 // Create instance with default configuration
 const unplayable = await createUnplayable();
@@ -67,7 +67,7 @@ console.log('Audio file:', result.audioFilePath);
 ### List and Validate Audio Devices
 
 ```typescript
-import { getAudioDevices } from '@theunwalked/unplayable';
+import { getAudioDevices } from '@utilarium/unplayable';
 
 // List all available audio devices
 const devices = await getAudioDevices();
@@ -129,7 +129,7 @@ Create `unplayable.config.json` in your project root or `~/.unplayable/config.js
 ### Programmatic Configuration
 
 ```typescript
-import { createUnplayable } from '@theunwalked/unplayable';
+import { createUnplayable } from '@utilarium/unplayable';
 
 const unplayable = await createUnplayable({
   config: {
@@ -199,7 +199,7 @@ const unplayable = await createUnplayable({
 Process audio with minimal setup:
 
 ```typescript
-import { processAudio } from '@theunwalked/unplayable';
+import { processAudio } from '@utilarium/unplayable';
 
 const result = await processAudio({
   maxRecordingTime: 60,
@@ -212,7 +212,7 @@ const result = await processAudio({
 Record audio and return file path:
 
 ```typescript
-import { recordAudio } from '@theunwalked/unplayable';
+import { recordAudio } from '@utilarium/unplayable';
 
 const audioPath = await recordAudio({
   maxRecordingTime: 30
@@ -224,7 +224,7 @@ const audioPath = await recordAudio({
 List available audio devices:
 
 ```typescript
-import { getAudioDevices } from '@theunwalked/unplayable';
+import { getAudioDevices } from '@utilarium/unplayable';
 
 const devices = await getAudioDevices();
 ```
@@ -296,7 +296,7 @@ interface UnplayableConfig {
 ```typescript
 import express from 'express';
 import multer from 'multer';
-import { createUnplayable } from '@theunwalked/unplayable';
+import { createUnplayable } from '@utilarium/unplayable';
 
 const app = express();
 const upload = multer({ dest: 'uploads/' });
@@ -346,7 +346,7 @@ import {
   AudioRecordingError, 
   AudioDeviceError,
   AudioConfigurationError 
-} from '@theunwalked/unplayable';
+} from '@utilarium/unplayable';
 
 try {
   await unplayable.processAudio(options);

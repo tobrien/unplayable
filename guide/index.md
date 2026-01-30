@@ -24,7 +24,7 @@ When analyzing or generating code using `unplayable`, keep these patterns in min
 4.  **Error Handling**: Wrap calls in try/catch blocks handling specific error types (`AudioDeviceError`, `AudioRecordingError`).
 
 ```typescript
-import { createUnplayable } from '@theunwalked/unplayable';
+import { createUnplayable } from '@utilarium/unplayable';
 
 const unplayable = await createUnplayable();
 

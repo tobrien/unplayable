@@ -184,7 +184,7 @@ npm run preview
 
 ```typescript
 // Good: Complete, runnable examples
-import { createUnplayable } from '@theunwalked/unplayable';
+import { createUnplayable } from '@utilarium/unplayable';
 
 const unplayable = await createUnplayable();
 const result = await unplayable.processAudio({

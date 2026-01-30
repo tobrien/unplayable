@@ -120,7 +120,7 @@ Create a configuration file for persistent settings. Unplayable looks for config
 Configure Unplayable directly in your code for maximum flexibility:
 
 ```typescript
-import { createUnplayable } from '@theunwalked/unplayable';
+import { createUnplayable } from '@utilarium/unplayable';
 
 const unplayable = await createUnplayable({
   config: {

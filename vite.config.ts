@@ -32,7 +32,7 @@ export default defineConfig({
                 'glob',
                 'zod',
                 'commander',
-                '@theunwalked/cardigantime'
+                '@utilarium/cardigantime'
             ],
         },
         target: 'esnext',

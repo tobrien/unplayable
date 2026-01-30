@@ -7,7 +7,7 @@
 The most common use case is recording audio for a fixed duration.
 
 ```typescript
-import { createUnplayable } from '@theunwalked/unplayable';
+import { createUnplayable } from '@utilarium/unplayable';
 
 const unplayable = await createUnplayable();
 
@@ -83,7 +83,7 @@ Handle specific error types to provide better user feedback.
 import { 
     AudioDeviceError, 
     AudioRecordingError 
-} from '@theunwalked/unplayable';
+} from '@utilarium/unplayable';
 
 try {
     await unplayable.recordAudio();
