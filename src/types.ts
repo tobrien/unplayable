@@ -103,6 +103,12 @@ export interface UnplayableConfig {
     outputDirectory?: string;
     /** Default preferences directory */
     preferencesDirectory?: string;
+    /** OpenAI configuration for Whisper transcription */
+    openai?: {
+        apiKey?: string;
+        model?: string;
+        baseURL?: string;
+    };
     /** Logging configuration */
     logging?: {
         level?: 'error' | 'warn' | 'info' | 'debug';
