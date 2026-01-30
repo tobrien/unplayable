@@ -271,13 +271,13 @@ export const createConfiguration = (
 };
 
 /**
- * Load configuration from various sources in order of precedence:
- * 1. Provided initial config
+ * Load configuration from various sources in order of precedence (highest to lowest):
+ * 1. Provided initial config (CLI args, programmatic overrides)
  * 2. Environment variables
  * 3. Configuration files
  * 4. Defaults
  *
- * @param initialConfig Initial configuration
+ * @param initialConfig Initial configuration (highest priority)
  * @param logger Optional logger
  * @returns Promise resolving to ConfigurationManager
  */
@@ -285,13 +285,19 @@ export const loadConfiguration = async (
     initialConfig: Partial<UnplayableConfig> = {},
     logger?: Logger
 ): Promise<ConfigurationManager> => {
-    const configManager = createConfiguration(initialConfig, logger);
+    // Start with defaults
+    const configManager = createConfiguration({}, logger);
 
-    // Load from environment variables
+    // Load from default file locations (lowest priority after defaults)
+    await configManager.loadFromDefaultLocations();
+
+    // Load from environment variables (overrides file config)
     configManager.loadFromEnvironment();
 
-    // Load from default file locations
-    await configManager.loadFromDefaultLocations();
+    // Apply initial config last (highest priority, overrides everything)
+    if (Object.keys(initialConfig).length > 0) {
+        configManager.updateConfig(initialConfig);
+    }
 
     // Ensure required directories exist
     await configManager.ensureDirectories();
