@@ -1,6 +1,6 @@
 {
   "name": "@utilarium/unplayable",
-  "version": "0.0.29",
+  "version": "0.0.30-dev.0",
   "description": "A cross-platform audio recording and processing library",
   "type": "module",
   "main": "./dist/unplayable.cjs",
