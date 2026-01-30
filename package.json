@@ -60,7 +60,7 @@
     "commander": "^14.0.2",
     "glob": "^13.0.0",
     "winston": "^3.17.0",
-    "zod": "^4.0.2"
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
