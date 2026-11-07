@@ -137,9 +137,6 @@ function App() {
                     </div>
                     <p className="subtitle">Cross-Platform Audio Recording & Processing</p>
                     <div className="header-links">
-                        <a href="https://utilarium.github.io" target="_blank" rel="noopener noreferrer">
-                            Utilarium
-                        </a>
                         <a href="https://github.com/tobrien/unplayable" target="_blank" rel="noopener noreferrer">
                             GitHub
                         </a>
